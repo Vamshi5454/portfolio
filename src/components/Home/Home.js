@@ -4,6 +4,9 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-GLXFYNPEGK");
 
 function Home() {
   return (
