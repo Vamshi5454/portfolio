@@ -6,6 +6,7 @@ import pdf from "../../Assets/../Assets/Vamshi_Ponugoti.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import ReactGA from "react-ga4";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
@@ -14,6 +15,11 @@ function ResumeNew() {
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
+
+  ReactGA.event({
+    category: "Resume ",
+    action: "Resume_Clicked",
+  });
 
   return (
     <div>
