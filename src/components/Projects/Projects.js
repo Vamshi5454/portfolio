@@ -37,22 +37,22 @@ function Projects() {
               imgPath={bitsOfCode}
               isBlog={false}
               title="Expense-Trackeer"
-              description="Crafted an intuitive Expense Tracker application utilizing React, designed to seamlessly manage and visualize personal savings and expenditures. This tool empowers users to make informed financial decisions by tracking their financial activities with ease"
+              description="Crafted an intuitive Expense Tracker application utilizing React, designed to seamlessly manage and visualize personal savings and expenditures. This tool empowers users to make informed financial decisions by tracking their financial activities with ease."
               ghLink="https://github.com/Vamshi5454/Expense_Tracker_React"
               demoLink="https://expense-tracker-vamshi.netlify.app"
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
               imgPath={editor}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"
+              title="Class Management System"
+              description="Developed a Class Management Web Application with React.js, featuring Material UI for an engaging UI and Node.js with Express.js for the backend, ensuring seamless attendance tracking and holiday management. Rigorous Jest testing guaranteed a stable, high-performing platform"
+              ghLink=" https://github.com/Vamshi5454/Class_Attendence-Management"
+              // demoLink="https://editor.soumya-jit.tech/"
             />
-          </Col> */}
+          </Col>
 
           {/* <Col md={4} className="project-card">
             <ProjectCard
