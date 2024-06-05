@@ -2,20 +2,14 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
-
 import {
-  AiFillStar,
   AiOutlineHome,
-  AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
+import ReactGA from "react-ga4";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -31,6 +25,18 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
+  const handleResumeClick = () => {
+    ReactGA.event({
+      action: "resume_download",
+      category: "Resume",
+      label: "Downloaded",
+    });
+    window.open(
+      "https://personal-resume01.s3.amazonaws.com/Vamshi_Ponugoti-Resume.pdf",
+      "_blank"
+    );
+  };
+
   return (
     <Navbar
       expanded={expand}
@@ -39,9 +45,6 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        {/* <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -54,70 +57,60 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
+            <NavItemWithIcon
+              icon={<AiOutlineHome style={{ marginBottom: "2px" }} />}
+              text="Home"
+              to="/"
+              onClick={() => updateExpanded(false)}
+            />
+            <NavItemWithIcon
+              icon={<AiOutlineUser style={{ marginBottom: "2px" }} />}
+              text="About"
+              to="/about"
+              onClick={() => updateExpanded(false)}
+            />
+            <NavItemWithIcon
+              icon={
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            {/* <Nav.Item>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item> */}
-
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item> */}
+                />
+              }
+              text="Projects"
+              to="/project"
+              onClick={() => updateExpanded(false)}
+            />
+            <NavItemWithIcon
+              icon={<CgFileDocument />}
+              text="Resume"
+              to="/"
+              onClick={() => {
+                updateExpanded(false);
+                handleResumeClick();
+              }}
+            />
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
+
+const NavItemWithIcon = ({ icon, text, to, onClick }) => {
+  return (
+    <Nav.Item>
+      <Nav.Link
+        as={Link}
+        to={to}
+        onClick={onClick}
+        className="dark:text-black flex items-center"
+      >
+        <div className="flex items-center">
+          {icon}
+          <span className="ml-2">{text}</span>
+        </div>
+      </Nav.Link>
+    </Nav.Item>
+  );
+};
 
 export default NavBar;
