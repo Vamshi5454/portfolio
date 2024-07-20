@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/AWS.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -22,12 +22,16 @@ function Home2() {
             <p className="home-about-body">
               I've developed a deep passion for programming, and along the way,
               I've become fluent in classics like
-              {/* <br /> */}
-              {/* <br />I am fluent in classics like */}
               <i>
-                <b className="purple"> C,Java,Python,Javascript,HTML,CSS </b>
+                <b className="purple">
+                  {" "}
+                  C,Java,Python,Javascript,HTML,CSS,AWS{" "}
+                </b>
               </i>
               <br />
+              <br></br>
+              I'm a Certified <b className="purple">AWS Solution Architect</b>.
+              <br></br>
               <br />
               My field of Interest's are building new &nbsp;
               <i>

@@ -25,6 +25,16 @@ function Projects() {
             <ProjectCard
               imgPath={chatify}
               isBlog={false}
+              title="Blog-Application"
+              description="Developed a dynamic and scalable Blog application using the MERN stack (MongoDB, Express.js, React, Node.js). Leveraged AWS Elastic Beanstalk for backend services, AWS Amplify for frontend hosting and CI/CD, and Amazon Cognito for secure user authentication. Enabled users to register, write blogs, and read others' blogs."
+              ghLink="https://github.com/Vamshi5454/blog_application.git"
+              demoLink="https://main.d1wqq8ea01hv3d.amplifyapp.com"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={chatify}
+              isBlog={false}
               title="EleBu-Social-App"
               description="In the 'EleBu-Social-App' project, I led the complete design and development using React, Spring Boot, and Azure, enhancing data management with MySQL and system performance with AWS S3, CloudFront, and PreSigned URLs. I also optimized service communication and user engagement through API Gateway and AWS Simple Notification Service (SNS)."
               ghLink="https://github.com/Vamshi5454/EleBu-Social-App.git"

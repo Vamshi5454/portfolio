@@ -10,10 +10,11 @@ function Type() {
           // "Freelancer",
           "MERN Stack Developer",
           // "Open Source Contributor",
+          "Certified AWS Solution Architect",
         ],
         autoStart: true,
         loop: true,
-        deleteSpeed: 50,
+        deleteSpeed: 30,
       }}
     />
   );
