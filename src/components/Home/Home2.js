@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/AWS.png";
+import AWSbadge from "../../Assets/AWS.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -30,7 +30,7 @@ function Home2() {
               </i>
               <br />
               <br></br>
-              I'm a Certified <b className="purple">AWS Solution Architect</b>.
+              I'm a Certified <b className="purple">AWS Solution Architect.</b>
               <br></br>
               <br />
               My field of Interest's are building new &nbsp;
@@ -59,7 +59,7 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={AWSbadge} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
         </Row>
